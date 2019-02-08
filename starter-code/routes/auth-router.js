@@ -36,7 +36,7 @@ router.post("/process-login", (req, res, next) => {
   const { userName, originalPassword } = req.body;
 
   Druglord.findOne({
-    Username: { $eq: userName }
+    userName: { $eq: userName }
   })
     .then(userDoc => {
       if (!userDoc) {
